@@ -17,8 +17,9 @@ if __name__ == '__main__':
     X_test = X[train_length:train_length+test_length]
 
     my_esn = SimpleESN(n_readout=1000, n_components=1000, damping = 0.3, weight_scaling = 1.25, discard_steps=discard_steps)
-    echo_train = my_esn.transform(X_train)
-    regr = linear_model.Ridge(alpha = 0.01) regr = linear_model.LinearRegression(normalize=True) ou regr = linear_model.SGDRegressor(alpha=0.000001, n_iter=20, loss='epsilon_insensitive', penalty='l2')
+    echo_train = my_esn.fit_transform(X_train)
+    regr = linear_model.Ridge(alpha = 0.01) # regr = linear_model.LinearRegression(normalize=True) ou regr = linear_model.SGDRegressor(alpha=0.000001, n_iter=20, loss='epsilon_insensitive', penalty='l2')
+    
     regr.fit(echo_train, y_train)
     reg = 1e-8  # regularization coefficient
     coef = dot(dot(y_train.T, echo_train), inv(dot(echo_train.T, echo_train)
@@ -57,4 +58,5 @@ if __name__ == '__main__':
     testdiff.plot(X[train_length+discard_steps+1:train_length+test_length+1]-y_lsq, 'r')
     testdiff.axis(tpaxis)
     testdiff.set_title('Prediction error')
+    plt.show()
     
