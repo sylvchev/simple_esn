@@ -76,10 +76,13 @@ class SimpleESN(BaseEstimator, TransformerMixin):
     Example
     -------
 
+    >>> from simple_esn import SimpleESN
     >>> import numpy as np
-    >>> from simple_esn import simpleESN
-    >>> 
-    
+    >>> n_samples, n_features = 10, 5
+    >>> np.random.seed(0)
+    >>> X = np.random.randn(n_samples, n_features)
+    >>> esn =SimpleESN(n_readout = 2)
+    >>> echoes = esn.fit_transform(X)
     """
     def __init__(self, n_readout, n_components=100, damping=0.5,
                  weight_scaling=0.9, discard_steps=0, random_state=None):
