@@ -1,3 +1,6 @@
+"""This example file shows how to use the SimpleESN class, in the scikit-learn
+fashion. It is inspired by the minimalistic ESN example of Mantas Lukoševičius
+"""
 # Copyright (C) 2015 Sylvain Chevallier <sylvain.chevallier@uvsq.fr>
 
 # This program is free software: you can redistribute it and/or modify
@@ -23,7 +26,6 @@ import matplotlib.pyplot as plt
 from pprint import pprint
 from time import time
 import numpy as np
-
 
 if __name__ == '__main__':
     X = loadtxt('MackeyGlass_t17.txt')

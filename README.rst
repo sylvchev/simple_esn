@@ -28,4 +28,26 @@ The only dependencies are scikit-learn, numpy and scipy.
 
 No installation is required.
 
+Example
+============
+Using the SimpleESN class is easy as:
+ from simple_esn import SimpleESN
+ import numpy as np
+ n_samples, n_features = 10, 5
+ np.random.seed(0)
+ X = np.random.randn(n_samples, n_features)
+ esn =SimpleESN(n_readout = 2)
+ echoes = esn.fit_transform(X)
+
+It could also be part of a Pipeline:
+ from simple_esn import SimpleESN
+ ...
+ pipeline = Pipeline([('esn', SimpleESN(n_readout=1000)),
+                      ('svr', svm.SVR())])
+ parameters = {
+     'esn__weight_scaling': [0.5, 1.0],
+     'svr__C': [1, 10]
+ }
+ grid_search = GridSearchCV(pipeline, parameters)
+ grid_search.fit(X_train, y_train)
 
