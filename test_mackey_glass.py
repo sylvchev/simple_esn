@@ -48,19 +48,19 @@ if __name__ == '__main__':
     y_true, y_pred = y_test, regr.predict(echo_test)
     err = mean_squared_error(y_true, y_pred)
     
-    fp = plt.figure(figsize=(15, 4))
+    fp = plt.figure(figsize=(12, 4))
     trainplot = fp.add_subplot(1, 3, 1)
-    trainplot.plot(X_train[:500], 'b')
+    trainplot.plot(X_train[100:600], 'b')
     trainplot.set_title('Some training signal')
     echoplot = fp.add_subplot(1, 3, 2)
-    echoplot.plot(echo_train[:500,:20])
+    echoplot.plot(echo_train[100:600,:20])
     echoplot.set_title('Some reservoir activation')
     testplot =  fp.add_subplot(1, 3, 3)
     testplot.plot(X_test[-500:], 'b', label='test signal')
     testplot.plot(y_pred[-500:], 'g', label='prediction')
     testplot.set_title('Prediction (MSE %0.3f)' % err)
     testplot.legend(loc='lower right')
-    plt.show()
+    plt.tight_layout(0.5)
 
     # Grid search
     pipeline = Pipeline([('esn', SimpleESN(n_readout=1000)),
@@ -87,15 +87,16 @@ if __name__ == '__main__':
     y_true, y_pred = y_test, grid_search.predict(X_test)
     err = mean_squared_error(y_true, y_pred)
     
-    fp = plt.figure(figsize=(10, 4))
-    echoplot = fp.add_subplot(1, 2, 1)
-    echoplot.plot(echo_train[:500,:20])
+    fg = plt.figure(figsize=(9, 4))
+    echoplot = fg.add_subplot(1, 2, 1)
+    echoplot.plot(echo_train[100:600,:20])
     echoplot.set_title('Some reservoir activation')
-    testplot =  fp.add_subplot(1, 2, 2)
+    testplot =  fg.add_subplot(1, 2, 2)
     testplot.plot(X_test[-500:], 'b', label='test signal')
     testplot.plot(y_pred[-500:], 'g', label='prediction')
     testplot.set_title('Prediction after GridSearch (MSE %0.3f)' % err)
     testplot.legend(loc='lower right')
+    plt.tight_layout(0.5)
     plt.show()
     
     
