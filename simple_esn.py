@@ -16,6 +16,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+# TODO: add n_readout = -1 for n_readout = n_components
+
 from __future__ import print_function
 import sys
 from sklearn.base import TransformerMixin, BaseEstimator
