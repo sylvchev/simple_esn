@@ -113,7 +113,7 @@ class SimpleESN(BaseEstimator, TransformerMixin):
 
         curr_ = zeros(shape=(self.n_components, 1))
         U = concatenate((ones(shape=(n_samples, 1)), X), axis=1)
-        for t in xrange(n_samples):
+        for t in range(n_samples):
             u = array(U[t,:], ndmin=2).T
             curr_ = (1-self.damping)*curr_ + self.damping*tanh(
                 self.input_weights_.dot(u) + self.weights_.dot(curr_))
@@ -186,7 +186,7 @@ class SimpleESN(BaseEstimator, TransformerMixin):
 
         curr_ = zeros(shape=(self.n_components, 1))
         U = concatenate((ones(shape=(n_samples, 1)), X), axis=1)
-        for t in xrange(n_samples):
+        for t in range(n_samples):
             u = array(U[t,:], ndmin=2).T
             curr_ = (1-self.damping)*curr_ + self.damping*tanh(
                 self.input_weights_.dot(u) + self.weights_.dot(curr_))
