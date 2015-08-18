@@ -22,8 +22,8 @@ install:
 
 # Run test
 script:
-  - nosetests --with-cov --cover-package simple_esn --logging-level=INFO
-# suppressed --cov-config .coveragerc 
+  - nosetests --with-coverage --cover-package simple_esn.py --logging-level=INFO
+# suppressed nosetests --with-cov --cover-package simple_esn --cov-config .coveragerc  --logging-level=INFO
 
 # Calculate coverage
 after_success:
