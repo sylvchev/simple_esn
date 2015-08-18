@@ -1,7 +1,6 @@
 language: python
 python:
   - 2.7
-  - 3.3
   - 3.4
 
 # Skeleton from https://gist.github.com/dan-blanchard/7045057
@@ -23,7 +22,7 @@ install:
 
 # Run test
 script:
-  - nosetests --with-cov --cov simple_esn --cov-config .coveragerc --logging-level=INFO
+  - nosetests --with-cov --cover-package simple_esn --cov-config .coveragerc --logging-level=INFO
 
 # Calculate coverage
 after_success:
