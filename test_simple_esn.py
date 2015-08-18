@@ -1,13 +1,6 @@
 import numpy as np
-
-# from numpy.testing import assert_array_almost_equal
 from numpy.testing import assert_array_equal
-# from numpy.testing import assert_equal
 from nose.tools import assert_true
-# from sklearn.utils.testing import assert_less
-# from sklearn.utils.testing import assert_raises
-# from sklearn.utils.testing import ignore_warnings
-
 from simple_esn import SimpleESN
 
 n_samples, n_features, n_readout = 10, 5, 2
