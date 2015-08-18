@@ -1,15 +1,20 @@
 # Simple_ESN
 
+[![Coverage Status](https://coveralls.io/repos/sylvchev/simple_esn/badge.svg?branch=master&service=github)](https://coveralls.io/github/sylvchev/simple_esn?branch=master)
+
+[![Travis CI](https://travis-ci.org/sylvchev/simple_esn.svg?branch=master)(https://travis-ci.org/sylvchev/simple_esn)
+
+[![Code Climate](https://codeclimate.com/github/sylvchev/simple_esn/badges/gpa.svg)](https://codeclimate.com/github/sylvchev/simple_esn)
 
 ## Simple ESN
 
-simple_esn implement a Python class of simple Echo State Networks models
+**Simple_esn** implement a Python class of simple Echo State Networks models
 witin the Scikit-learn framework. It is intended to be a fast-and-easy
 transformation of an input signal in a reservoir of neurons. The classification
 or regression could be done with any scikit-learn classifier/regressor.
 
-The SimpleESN object could be part of a Pipeline and its parameter space could
-be explored with a GridSearchCV for example.
+The `SimpleESN` object could be part of a `Pipeline` and its parameter space could
+be explored with a `GridSearchCV` for example.
 
 The code is inspired by the "minimalistic ESN example" proposed by Mantas
 Lukoševičius. It is licenced under GPLv3.
@@ -37,7 +42,7 @@ import numpy as np
 n_samples, n_features = 10, 5
 np.random.seed(0)
 X = np.random.randn(n_samples, n_features)
-esn =SimpleESN(n_readout = 2)
+esn = SimpleESN(n_readout = 2)
 echoes = esn.fit_transform(X)
 ```
 
