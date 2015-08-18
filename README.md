@@ -1,9 +1,7 @@
 # Simple_ESN
 
 [![Coverage Status](https://coveralls.io/repos/sylvchev/simple_esn/badge.svg?branch=master&service=github)](https://coveralls.io/github/sylvchev/simple_esn?branch=master)
-
-[![Travis CI](https://travis-ci.org/sylvchev/simple_esn.svg?branch=master)(https://travis-ci.org/sylvchev/simple_esn)
-
+[![Travis CI](https://travis-ci.org/sylvchev/simple_esn.svg?branch=master)](https://travis-ci.org/sylvchev/simple_esn)
 [![Code Climate](https://codeclimate.com/github/sylvchev/simple_esn/badges/gpa.svg)](https://codeclimate.com/github/sylvchev/simple_esn)
 
 ## Simple ESN
