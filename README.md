@@ -31,7 +31,7 @@ No installation is required.
 
 Using the SimpleESN class is easy as:
 
-```
+```python
 from simple_esn import SimpleESN
 import numpy as np
 n_samples, n_features = 10, 5
@@ -43,9 +43,9 @@ echoes = esn.fit_transform(X)
 
 It could also be part of a Pipeline:
 
-```
+```python
 from simple_esn import SimpleESN
-...
+# Pick your classifier
 pipeline = Pipeline([('esn', SimpleESN(n_readout=1000)),
                      ('svr', svm.SVR())])
 parameters = {
