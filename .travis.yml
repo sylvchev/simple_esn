@@ -4,6 +4,9 @@ python:
   - 3.3
 sudo: false
 
+notifications:
+  slack: lisvai:SgdQxglgGWYCyiAAWa3aU5Pg
+
 # Skeleton from https://gist.github.com/dan-blanchard/7045057
 # Setup anaconda
 before_install:
