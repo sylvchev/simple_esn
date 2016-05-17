@@ -28,7 +28,6 @@ before_install:
 install:
   - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION nose numpy scipy scikit-learn
   - source activate test-environment
-  - python setup.py install
   # Coverage packages are on my binstar channel
   - conda install --yes -c dan_blanchard python-coveralls nose-cov
 
