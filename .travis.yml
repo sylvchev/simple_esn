@@ -28,13 +28,11 @@ before_install:
 install:
   - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION nose numpy scipy scikit-learn
   - source activate test-environment
-  # Coverage packages are on my binstar channel
+  # Coverage packages are on my binstar channel : https://conda.anaconda.org/dan_blanchard
   - conda install --yes -c dan_blanchard python-coveralls nose-cov
 
-# Run test
 script:
-  - nosetests --with-coverage --cover-package simple_esn.py --logging-level=INFO
+  - nosetests --with-coverage --cover-package simple_esn --logging-level=INFO
 
-# Calculate coverage
 after_success:
   - coveralls --config_file .coveragerc
