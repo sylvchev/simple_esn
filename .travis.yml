@@ -36,3 +36,4 @@ script:
 
 after_success:
   - coveralls --config_file .coveragerc
+  - codecov
