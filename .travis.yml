@@ -1,17 +1,16 @@
 language: python
 python:
-  - 2.7
-  - 3.3
+  - "2.7"
+  - "3.5"
 sudo: false
+cache: pip
 
 notifications:
   slack: lisvai:SgdQxglgGWYCyiAAWa3aU5Pg
 
-# Skeleton from https://gist.github.com/dan-blanchard/7045057 and
-# http://conda.pydata.org/docs/travis.html
 
-# Setup anaconda
 before_install:
+  # - sudo apt-get update
   - if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then
       wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O miniconda.sh;
     else
@@ -24,12 +23,10 @@ before_install:
   - conda update -q conda
   - conda info -a
 
-# Install packages
 install:
-  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION nose numpy scipy scikit-learn
+  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION pip nose numpy scipy scikit-learn
   - source activate test-environment
-  # Coverage packages are on my binstar channel : https://conda.anaconda.org/dan_blanchard
-  - conda install --yes -c dan_blanchard python-coveralls nose-cov
+  - pip install codecov pep8 python-coveralls
 
 script:
   - nosetests --with-coverage --cover-package simple_esn --logging-level=INFO
