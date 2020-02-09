@@ -20,11 +20,12 @@ before_install:
 install:
   - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION pip nose numpy scipy scikit-learn
   - source activate test-environment
-  - pip install codecov pep8 python-coveralls
+  - pip install codecov pep8 python-coveralls flake8
   - python setup.py install
 
 script:
   - nosetests --with-coverage --cover-package simple_esn --logging-level=INFO
+  - flake8
 
 after_success:
   - coveralls --config_file .coveragerc
