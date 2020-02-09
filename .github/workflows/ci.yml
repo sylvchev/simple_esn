@@ -31,7 +31,3 @@ jobs:
       run: |
         pip install codecov pep8 python-coveralls nose
         nosetests --with-coverage --cover-package simple_esn --logging-level=INFO
-    - name: Coverage
-      run: |
-        coveralls --config_file .coveragerc
-        codecov
