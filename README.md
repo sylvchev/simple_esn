@@ -32,12 +32,12 @@ The only dependencies are scikit-learn, numpy and scipy.
 
 Install with `python setup.py install` or `python setup.py develop`
 
-## Example
+## Examples
 
 Using the SimpleESN class is easy as:
 
 ```python
-from simple_esn import SimpleESN
+from simple_esn.simple_esn import SimpleESN
 import numpy as np
 n_samples, n_features = 10, 5
 np.random.seed(0)
@@ -49,7 +49,7 @@ echoes = esn.fit_transform(X)
 It could also be part of a Pipeline:
 
 ```python
-from simple_esn import SimpleESN
+from simple_esn.simple_esn import SimpleESN
 # Pick your classifier
 pipeline = Pipeline([('esn', SimpleESN(n_readout=1000)),
                      ('svr', svm.SVR())])
