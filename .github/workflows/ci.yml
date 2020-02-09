@@ -29,11 +29,9 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with nose
       run: |
-        pip install codecov pep8 python-coveralls nose
+        pip install pep8 nose coveralls python-coveralls codecov
         nosetests --with-coverage --cover-package simple_esn --logging-level=INFO
-    - name: Slack notification
-      env:
-        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-      uses: Ilshidur/action-slack@master
-      with:
-        args: 'A new commit has been pushed.' # Optional
+    - name: Coverage
+      run: |
+        coveralls --config_file .coveragerc
+        codecov
