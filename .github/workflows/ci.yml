@@ -35,8 +35,6 @@ jobs:
       env:
         SLACK_WEBHOOK: https://hooks.slack.com/services/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
       uses: Ilshidur/action-slack@master
-      with:
-	     args: 'A new commit has been pushed.' # Optional
     - name: Coverage
 	   run: |
 		  coveralls --config_file .coveragerc
