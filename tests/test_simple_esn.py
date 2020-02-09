@@ -1,7 +1,7 @@
 import numpy as np
 from numpy.testing import assert_array_equal
 from nose.tools import assert_true
-from simple_esn import SimpleESN
+from simple_esn.simple_esn import SimpleESN
 
 n_samples, n_features, n_readout = 10, 5, 2
 rng_global = np.random.RandomState(0)
