@@ -28,7 +28,9 @@ Lukoševičius. It is licenced under GPLv3.
 
 The only dependencies are scikit-learn, numpy and scipy.
 
-No installation is required.
+## Installation
+
+Install with `python setup.py install` or `python setup.py develop`
 
 ## Example
 
