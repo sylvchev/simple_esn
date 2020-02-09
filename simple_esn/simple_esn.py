@@ -18,13 +18,13 @@
 
 # TODO: add n_readout = -1 for n_readout = n_components
 
-from __future__ import print_function
 import sys
 from sklearn.base import TransformerMixin, BaseEstimator
 from sklearn.utils import check_random_state, check_array
 from numpy import zeros, ones, concatenate, array, tanh, vstack, arange
 import numpy as np
 import scipy.linalg as la
+
 
 class SimpleESN(BaseEstimator, TransformerMixin):
     """Simple Echo State Network (ESN)
