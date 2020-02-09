@@ -41,7 +41,3 @@ jobs:
       run: |
         coveralls --config_file .coveragerc
         codecov
-
-    © 2020 GitHub, Inc.
-    Terms
-    Privacy
