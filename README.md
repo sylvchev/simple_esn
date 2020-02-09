@@ -7,7 +7,7 @@
 ## Simple ESN
 
 **Simple_esn** implement a Python class of simple Echo State Networks models
-witin the Scikit-learn framework. It is intended to be a fast-and-easy
+within the Scikit-learn framework. It is intended to be a fast-and-easy
 transformation of an input signal in a reservoir of neurons. The classification
 or regression could be done with any scikit-learn classifier/regressor.
 
